@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Hillsborough Basketball Academy',
   description: 'Developing the next generation through basketball.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
@@ -22,8 +25,15 @@ export default function RootLayout({
         <nav className="fixed top-0 w-full bg-black bg-opacity-90 backdrop-blur-sm z-50">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
-              <Link href="/" className="text-white text-xl font-bold">
-                HBA
+              <Link href="/" className="flex items-center space-x-3">
+                <Image
+                  src="/images/logo.PNG"
+                  alt="HBA Logo"
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                />
+                <span className="text-white text-xl font-bold">Hillsborough Basketball Academy</span>
               </Link>
               <div className="hidden md:flex space-x-8">
                 <Link href="/" className="text-white hover:text-gray-300 transition-colors">
@@ -56,7 +66,7 @@ export default function RootLayout({
             <div className="text-center">
               <div className="flex justify-center items-center space-x-6 mb-4">
                 <Image
-                  src="/images/Untitled.png"
+                  src="/images/logo.PNG"
                   alt="Hillsborough Basketball Academy Logo"
                   width={40}
                   height={40}

@@ -6,6 +6,15 @@ export default function About() {
       {/* Hero Section */}
       <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4 text-center">
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/images/logo.PNG"
+              alt="Hillsborough Basketball Academy Logo"
+              width={400}
+              height={400}
+              className="rounded-full shadow-lg"
+            />
+          </div>
           <h1 className="text-5xl font-bold mb-6">About Us</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Learn about our mission, our founder, and the impact we're making in the Hillsborough community.
