@@ -25,12 +25,19 @@ export default function Contact() {
     setSubmitStatus('idle')
 
     try {
-      const response = await fetch('/api/contact', {
+      // Using Formspree for simple email delivery
+      const response = await fetch('https://formspree.io/f/xpzgqjqj', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          _subject: `New Contact Form Submission from ${formData.name}`,
+        }),
       })
 
       if (response.ok) {
