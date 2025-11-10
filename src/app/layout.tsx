@@ -51,6 +51,9 @@ export default function RootLayout({
                 <Link href="/2027-season" className="text-white hover:text-gray-300 transition-colors">
                   2027 Season
                 </Link>
+                <Link href="/donate" className="text-white hover:text-gray-300 transition-colors">
+                  Donate
+                </Link>
                 <Link href="/contact" className="text-white hover:text-gray-300 transition-colors">
                   Contact
                 </Link>
