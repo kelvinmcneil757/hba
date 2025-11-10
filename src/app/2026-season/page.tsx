@@ -25,36 +25,39 @@ export default function Season2026() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="flex flex-col items-center">
-              <div className="relative w-full aspect-square max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl">
+              <div className="relative w-full max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl flex items-center justify-center" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/images/new_logos/Untitled10.PNG"
                   alt="HBA Logo"
-                  fill
-                  className="object-contain p-4"
+                  width={400}
+                  height={400}
+                  className="object-contain p-4 w-full h-full"
                   unoptimized
                   priority
                 />
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="relative w-full aspect-square max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl">
+              <div className="relative w-full max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl flex items-center justify-center" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/images/new_logos/Untitled12.PNG"
                   alt="Hillsborough Basketball Academy Logo"
-                  fill
-                  className="object-contain p-4"
+                  width={400}
+                  height={400}
+                  className="object-contain p-4 w-full h-full"
                   unoptimized
                   priority
                 />
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="relative w-full aspect-square max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl">
+              <div className="relative w-full max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl flex items-center justify-center" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/images/new_logos/Untitled13.PNG"
                   alt="HBA Team Logo"
-                  fill
-                  className="object-contain p-4"
+                  width={400}
+                  height={400}
+                  className="object-contain p-4 w-full h-full"
                   unoptimized
                   priority
                 />
