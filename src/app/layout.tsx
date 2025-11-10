@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="fixed top-0 w-full bg-black bg-opacity-90 backdrop-blur-sm z-50">
+        <nav className="fixed top-0 w-full bg-black bg-opacity-90 backdrop-blur-sm z-50 relative">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center space-x-2 sm:space-x-3">

@@ -7,7 +7,9 @@ import Image from 'next/image'
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleMenu = () => {
+  const toggleMenu = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
     setIsOpen(!isOpen)
   }
 
@@ -16,12 +18,14 @@ export default function MobileNav() {
   }
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden relative z-[80]">
       <button
         onClick={toggleMenu}
-        className="text-white p-2 focus:outline-none focus:ring-2 focus:ring-white rounded"
+        className="text-white p-2 focus:outline-none focus:ring-2 focus:ring-white rounded relative z-[80] touch-manipulation"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
+        type="button"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
       >
         {isOpen ? (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,10 +42,10 @@ export default function MobileNav() {
       {isOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            className="fixed inset-0 bg-black bg-opacity-50 z-[60]"
             onClick={closeMenu}
           />
-          <div className="fixed top-16 left-0 right-0 bg-black z-50 shadow-lg">
+          <div className="fixed top-16 left-0 right-0 bg-black z-[70] shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
             <nav className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
                 <Link
