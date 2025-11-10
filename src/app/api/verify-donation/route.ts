@@ -6,12 +6,14 @@ const ipAttempts = new Map<string, { count: number; lastAttempt: number; blocked
 // Clean up old entries every 10 minutes
 setInterval(() => {
   const now = Date.now()
-  for (const [ip, data] of ipAttempts.entries()) {
+  const ipsToDelete: string[] = []
+  ipAttempts.forEach((data, ip) => {
     // Remove entries older than 1 hour
     if (now - data.lastAttempt > 3600000) {
-      ipAttempts.delete(ip)
+      ipsToDelete.push(ip)
     }
-  }
+  })
+  ipsToDelete.forEach(ip => ipAttempts.delete(ip))
 }, 600000)
 
 function getClientIP(request: NextRequest): string {
