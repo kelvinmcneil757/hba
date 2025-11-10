@@ -196,7 +196,7 @@ export default function About() {
                   <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
                     <Image
                       src="/images/about_us/IMG_1096.jpg"
-                      alt="HBA basketball practice"
+                      alt="HBA players during basketball practice at gym"
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 600px"
@@ -206,7 +206,7 @@ export default function About() {
                   <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
                     <Image
                       src="/images/about_us/IMG_1097.jpg"
-                      alt="HBA player moment"
+                      alt="HBA player in thoughtful moment on basketball court"
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 600px"
