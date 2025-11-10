@@ -7,7 +7,7 @@ import Image from 'next/image'
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleMenu = (e: React.MouseEvent) => {
+  const toggleMenu = (e: React.MouseEvent | React.TouchEvent) => {
     e.preventDefault()
     e.stopPropagation()
     setIsOpen(!isOpen)
@@ -21,10 +21,8 @@ export default function MobileNav() {
     <div className="md:hidden relative z-[80]">
       <button
         onClick={toggleMenu}
-        onTouchStart={(e) => {
-          e.stopPropagation()
-        }}
-        className="text-white p-3 -mr-2 focus:outline-none focus:ring-2 focus:ring-white rounded relative z-[80] touch-manipulation cursor-pointer active:bg-white/10"
+        onTouchEnd={toggleMenu}
+        className="text-white p-3 -mr-2 focus:outline-none focus:ring-2 focus:ring-white rounded relative z-[80] touch-manipulation cursor-pointer active:bg-white/10 transition-colors"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
         type="button"
@@ -32,7 +30,8 @@ export default function MobileNav() {
           WebkitTapHighlightColor: 'transparent',
           touchAction: 'manipulation',
           minWidth: '44px',
-          minHeight: '44px'
+          minHeight: '44px',
+          pointerEvents: 'auto'
         }}
       >
         {isOpen ? (
