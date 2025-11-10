@@ -47,117 +47,6 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* Donation CTA Section - Moved to Top */}
-      <section className="py-20 bg-gradient-to-b from-blue-900 to-black text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Make a Difference Today
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Your support helps us continue our mission of developing the next generation through basketball, 
-            regardless of financial circumstances. Every donation, no matter the size, makes a meaningful impact.
-          </p>
-          
-          {/* Security Verification */}
-          <div className="max-w-md mx-auto mb-8">
-            {!isVerified ? (
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border-2 border-white/20">
-                <h3 className="text-2xl font-bold mb-4 text-white">Security Verification Required</h3>
-                <div className="bg-blue-900/30 rounded-lg p-4 mb-6 border border-blue-400/30">
-                  <p className="text-white mb-3 text-sm leading-relaxed">
-                    <strong className="font-semibold">For your security and ours:</strong> We require a quick verification step before accessing our donation page. This additional security measure helps us prevent bad actors, automated bots, and malicious attempts that could compromise our donation system.
-                  </p>
-                  <p className="text-white text-sm leading-relaxed">
-                    <strong className="font-semibold">What to expect:</strong> Simply answer the math question below. Once you complete the verification, the secure donation link will appear, and you'll be able to proceed with your donation.
-                  </p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <label htmlFor="verification-question" className="block text-left text-white font-semibold mb-2">
-                      {question}
-                    </label>
-                    <input
-                      id="verification-question"
-                      type="text"
-                      value={userAnswer}
-                      onChange={(e) => {
-                        setUserAnswer(e.target.value)
-                        setShowError(false)
-                      }}
-                      onKeyPress={handleKeyPress}
-                      className="w-full px-4 py-3 rounded-lg text-black text-center text-xl font-semibold focus:outline-none focus:ring-4 focus:ring-blue-500"
-                      placeholder="Enter answer"
-                      aria-label="Answer to verification question"
-                      autoComplete="off"
-                    />
-                    {showError && (
-                      <p className="text-red-300 text-sm mt-2" role="alert">
-                        Incorrect answer. Please try again.
-                      </p>
-                    )}
-                  </div>
-                  
-                  <button
-                    onClick={handleVerification}
-                    className="w-full bg-white text-blue-900 px-6 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-500"
-                    aria-label="Verify and proceed to donation"
-                  >
-                    Verify & Continue
-                  </button>
-                </div>
-                
-                <p className="text-xs text-gray-300 mt-4">
-                  <svg className="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                  </svg>
-                  Secure verification required
-                </p>
-              </div>
-            ) : (
-              <div className="space-y-6">
-                <div className="bg-green-500/20 border-2 border-green-400 rounded-xl p-6">
-                  <div className="flex items-center justify-center mb-4">
-                    <svg className="w-12 h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <p className="text-white font-semibold text-lg mb-4">Verification Complete!</p>
-                  <a
-                    href="https://buy.stripe.com/dRm7sL7pXfUzcrKcypfIs01"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-blue-900 px-12 py-6 rounded-lg font-bold text-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-500"
-                    aria-label="Proceed to secure donation page"
-                  >
-                    Donate Now
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-          
-          <div className="max-w-2xl mx-auto space-y-4">
-            <p className="text-sm text-gray-300">
-              {isVerified 
-                ? "You will be redirected to our secure Stripe donation page."
-                : "Complete the verification above to access our secure donation page."
-              }
-            </p>
-            {isVerified && (
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                <p className="text-white text-sm leading-relaxed mb-2">
-                  <strong className="font-semibold">Donation Options:</strong> On the Stripe donation page, you can add multiple units of $25 to increase your donation amount. Simply adjust the quantity to donate $50, $75, $100, or any multiple of $25.
-                </p>
-                <p className="text-white text-sm leading-relaxed">
-                  <strong className="font-semibold">Tax Receipt:</strong> By providing your email address during checkout, you will receive a tax receipt via email within 48 hours of your donation. This receipt includes our 501(c)(3) organization information for your tax records.
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* Impact Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -290,6 +179,116 @@ export default function Donate() {
         </div>
       </section>
 
+      {/* Donation CTA Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-900 to-black text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Make a Difference Today
+          </h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Your support helps us continue our mission of developing the next generation through basketball, 
+            regardless of financial circumstances. Every donation, no matter the size, makes a meaningful impact.
+          </p>
+          
+          {/* Security Verification */}
+          <div className="max-w-md mx-auto mb-8">
+            {!isVerified ? (
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border-2 border-white/20">
+                <h3 className="text-2xl font-bold mb-4 text-white">Security Verification Required</h3>
+                <div className="bg-blue-900/30 rounded-lg p-4 mb-6 border border-blue-400/30">
+                  <p className="text-white mb-3 text-sm leading-relaxed">
+                    <strong className="font-semibold">For your security and ours:</strong> We require a quick verification step before accessing our donation page. This additional security measure helps us prevent bad actors, automated bots, and malicious attempts that could compromise our donation system.
+                  </p>
+                  <p className="text-white text-sm leading-relaxed">
+                    <strong className="font-semibold">What to expect:</strong> Simply answer the math question below. Once you complete the verification, the secure donation link will appear, and you'll be able to proceed with your donation.
+                  </p>
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <label htmlFor="verification-question" className="block text-left text-white font-semibold mb-2">
+                      {question}
+                    </label>
+                    <input
+                      id="verification-question"
+                      type="text"
+                      value={userAnswer}
+                      onChange={(e) => {
+                        setUserAnswer(e.target.value)
+                        setShowError(false)
+                      }}
+                      onKeyPress={handleKeyPress}
+                      className="w-full px-4 py-3 rounded-lg text-black text-center text-xl font-semibold focus:outline-none focus:ring-4 focus:ring-blue-500"
+                      placeholder="Enter answer"
+                      aria-label="Answer to verification question"
+                      autoComplete="off"
+                    />
+                    {showError && (
+                      <p className="text-red-300 text-sm mt-2" role="alert">
+                        Incorrect answer. Please try again.
+                      </p>
+                    )}
+                  </div>
+                  
+                  <button
+                    onClick={handleVerification}
+                    className="w-full bg-white text-blue-900 px-6 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-500"
+                    aria-label="Verify and proceed to donation"
+                  >
+                    Verify & Continue
+                  </button>
+                </div>
+                
+                <p className="text-xs text-gray-300 mt-4">
+                  <svg className="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  </svg>
+                  Secure verification required
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-6">
+                <div className="bg-green-500/20 border-2 border-green-400 rounded-xl p-6">
+                  <div className="flex items-center justify-center mb-4">
+                    <svg className="w-12 h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <p className="text-white font-semibold text-lg mb-4">Verification Complete!</p>
+                  <a
+                    href="https://buy.stripe.com/dRm7sL7pXfUzcrKcypfIs01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-white text-blue-900 px-12 py-6 rounded-lg font-bold text-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-500"
+                    aria-label="Proceed to secure donation page"
+                  >
+                    Donate Now
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+          
+          <div className="max-w-2xl mx-auto space-y-4">
+            <p className="text-sm text-gray-300">
+              {isVerified 
+                ? "You will be redirected to our secure Stripe donation page."
+                : "Complete the verification above to access our secure donation page."
+              }
+            </p>
+            {isVerified && (
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <p className="text-white text-sm leading-relaxed mb-2">
+                  <strong className="font-semibold">Donation Options:</strong> On the Stripe donation page, you can add multiple units of $25 to increase your donation amount. Simply adjust the quantity to donate $50, $75, $100, or any multiple of $25.
+                </p>
+                <p className="text-white text-sm leading-relaxed">
+                  <strong className="font-semibold">Tax Receipt:</strong> By providing your email address during checkout, you will receive a tax receipt via email within 48 hours of your donation. This receipt includes our 501(c)(3) organization information for your tax records.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
       {/* Additional Information */}
       <section className="py-12 bg-white">
