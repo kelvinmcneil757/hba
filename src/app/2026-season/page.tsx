@@ -27,8 +27,8 @@ export default function Season2026() {
             <div className="flex flex-col items-center">
               <div className="relative w-full aspect-square max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/2026-season/Untitled 14.PNG"
-                  alt="HBA Logo - Stylized H"
+                  src="/images/new_logos/Untitled 10.PNG"
+                  alt="HBA Logo"
                   fill
                   className="object-contain p-4"
                 />
@@ -37,7 +37,7 @@ export default function Season2026() {
             <div className="flex flex-col items-center">
               <div className="relative w-full aspect-square max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/2026-season/Untitled 15.PNG"
+                  src="/images/new_logos/Untitled 12.PNG"
                   alt="Hillsborough Basketball Academy Logo"
                   fill
                   className="object-contain p-4"
@@ -47,8 +47,8 @@ export default function Season2026() {
             <div className="flex flex-col items-center">
               <div className="relative w-full aspect-square max-w-xs mb-6 bg-black rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/2026-season/Untitled 16.PNG"
-                  alt="Hillsborough 86ers Logo"
+                  src="/images/new_logos/Untitled 13.PNG"
+                  alt="HBA Team Logo"
                   fill
                   className="object-contain p-4"
                 />
