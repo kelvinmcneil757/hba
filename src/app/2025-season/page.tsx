@@ -186,25 +186,30 @@ export default function Season2025() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Main Image */}
-      <section className="relative">
-        <div className="relative h-[70vh] min-h-[500px] w-full">
-          <Image
-            src="/images/2025-season/404C6A4F-F7F9-4CA2-A116-A5E04EA3691F_1_105_c.jpeg"
-            alt="HBA 2025 Season Team Photo"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+      <section className="relative bg-black">
+        <div className="relative w-full flex items-center justify-center py-8 md:py-12">
+          <div className="relative w-full max-w-6xl mx-auto px-4">
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/2025-season/404C6A4F-F7F9-4CA2-A116-A5E04EA3691F_1_105_c.jpeg"
+                alt="HBA 2025 Season Team Photo"
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 100vw, 1200px"
+              />
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 pointer-events-none" />
         </div>
         
         {/* Title Overlay */}
-        <div className="absolute inset-0 flex items-end justify-center pb-16">
+        <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center pb-8 md:pb-12">
           <div className="text-center text-white px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 drop-shadow-2xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-2xl">
               2025 Season
             </h1>
-            <p className="text-xl md:text-2xl drop-shadow-lg">
+            <p className="text-lg md:text-xl lg:text-2xl drop-shadow-lg">
               Hillsborough Basketball Academy
             </p>
           </div>
