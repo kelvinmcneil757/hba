@@ -124,8 +124,110 @@ export default function About() {
         </div>
       </section>
 
-      {/* Organization History */}
+      {/* Community Service Section */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-black mb-6">Giving Back to Our Community</h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                At Hillsborough Basketball Academy, we believe that developing great basketball players 
+                means developing great people. That's why we're committed to giving back to our community 
+                and teaching our players the importance of service and compassion.
+              </p>
+            </div>
+
+            {/* Food Bank Volunteering Section */}
+            <div className="mb-16">
+              <div className="bg-gray-50 rounded-xl p-8 md:p-12 mb-12">
+                <h3 className="text-3xl font-bold text-black mb-6 text-center">
+                  Volunteering at Food Bank at Durham - 2025 Season
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed mb-8 max-w-4xl mx-auto">
+                  During the 2025 season, our players and families came together to volunteer at the 
+                  Food Bank at Durham, demonstrating our commitment to community service. Our young 
+                  athletes learned valuable lessons about empathy, teamwork, and the importance of 
+                  helping those in need. This experience reinforced our core values of character 
+                  development and community engagement, showing our players that being a great 
+                  athlete means being a great citizen.
+                </p>
+                
+                {/* Food Bank Exterior Image */}
+                <div className="mb-8">
+                  <div className="relative w-full max-w-4xl mx-auto aspect-[16/10] rounded-lg overflow-hidden shadow-xl">
+                    <Image
+                      src="/images/about_us/IMG_1100.jpg"
+                      alt="Food Bank at Durham exterior"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 1200px"
+                    />
+                  </div>
+                </div>
+
+                {/* Volunteering Activity Images Grid */}
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/about_us/IMG_1099.jpg"
+                      alt="HBA players packing items at Food Bank at Durham"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                    />
+                  </div>
+                  <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/about_us/IMG_1098.jpg"
+                      alt="HBA team group photo at Food Bank at Durham"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                    />
+                  </div>
+                </div>
+
+                {/* Additional Images */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/about_us/IMG_1096.jpg"
+                      alt="HBA basketball practice"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                    />
+                  </div>
+                  <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/about_us/IMG_1097.jpg"
+                      alt="HBA player moment"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Community Impact Message */}
+            <div className="bg-black text-white rounded-xl p-8 md:p-12 text-center">
+              <h3 className="text-3xl font-bold mb-6">Building Character Through Service</h3>
+              <p className="text-lg leading-relaxed max-w-3xl mx-auto">
+                Our community service initiatives are an integral part of the HBA experience. 
+                By participating in volunteer activities like our work with the Food Bank at Durham, 
+                our players learn that success isn't just measured by wins and losses, but by the 
+                positive impact we make in our community. These experiences shape our players into 
+                well-rounded individuals who understand the value of giving back.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Organization History */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-black text-center mb-12">Our Story</h2>
