@@ -49,13 +49,14 @@ export default function About() {
               </div>
               <div className="bg-gray-100 rounded-lg p-8">
                 <div className="text-center">
-                  <div className="w-64 h-64 mx-auto mb-6 rounded-lg overflow-hidden">
+                  <div className="w-96 h-96 mx-auto mb-6 rounded-lg overflow-hidden shadow-xl">
                     <Image
                       src="/images/IMG_0055.png"
                       alt="Kelvin McNeil coaching basketball"
-                      width={256}
-                      height={256}
+                      width={384}
+                      height={384}
                       className="w-full h-full object-cover"
+                      unoptimized
                     />
                   </div>
                   <h4 className="text-xl font-semibold text-black mb-2">Kelvin McNeil</h4>
