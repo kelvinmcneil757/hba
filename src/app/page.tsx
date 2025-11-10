@@ -85,6 +85,111 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Season Pages Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-black text-center mb-12">
+              Our Seasons
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Link href="/2025-season" className="group">
+                <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <span className="text-white text-2xl font-bold">2025</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-black mb-3">2025 Season</h3>
+                    <p className="text-gray-600 mb-4">
+                      Our inaugural travel basketball season, providing affordable competitive opportunities for 3rd and 4th graders.
+                    </p>
+                    <span className="text-blue-900 font-semibold group-hover:underline">
+                      View Season →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+              
+              <Link href="/2026-season" className="group">
+                <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <span className="text-white text-2xl font-bold">2026</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-black mb-3">2026 Season</h3>
+                    <p className="text-gray-600 mb-4">
+                      Building champions through fundamentals, teamwork, and grit. See our schedule, uniforms, and philosophy.
+                    </p>
+                    <span className="text-blue-900 font-semibold group-hover:underline">
+                      View Season →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+              
+              <Link href="/2027-season" className="group">
+                <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <span className="text-white text-2xl font-bold">2027</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-black mb-3">2027 Season</h3>
+                    <p className="text-gray-600 mb-4">
+                      Our final travel basketball season. Learn about tryouts and our transition to a skill academy.
+                    </p>
+                    <span className="text-blue-900 font-semibold group-hover:underline">
+                      View Season →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Transition to Skill Academy Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-8 md:p-12 shadow-xl">
+              <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8">
+                A New Chapter: Transitioning to a True Basketball Skill Academy
+              </h2>
+              <div className="space-y-6 text-lg text-gray-800 leading-relaxed">
+                <p>
+                  <strong className="text-black text-xl">2027 will mark our final year as a travel basketball team.</strong> 
+                  This milestone represents both an ending and an exciting new beginning for Hillsborough Basketball Academy.
+                </p>
+                <p>
+                  Starting in <strong className="text-black">2028, we will transition to a true basketball skill academy</strong>, 
+                  maintaining our nonprofit mission and goals of providing affordable training opportunities to children in the area. 
+                  This evolution allows us to reach more young athletes and focus on what we do best: developing fundamental skills, 
+                  building character, and fostering a love for the game.
+                </p>
+                <p>
+                  Our new model will offer <strong className="text-black">group and individual skills clinics</strong>, making 
+                  high-quality basketball training accessible to families throughout Hillsborough, Carrboro, Chapel Hill, Durham, 
+                  Burlington, and surrounding communities. <strong className="text-black">Individual skill work will begin in 2028</strong>, 
+                  providing personalized attention to help each player reach their full potential.
+                </p>
+                <p>
+                  While we're saying goodbye to travel basketball after the 2027 season, we're saying hello to a more flexible, 
+                  accessible approach that aligns perfectly with our core mission: developing the next generation through basketball, 
+                  regardless of their competitive goals or financial circumstances.
+                </p>
+                <div className="mt-8 pt-8 border-t-2 border-blue-900">
+                  <p className="text-center text-xl font-semibold text-black">
+                    Our commitment to affordable, high-quality basketball training continues. 
+                    The game changes, but our mission remains the same.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4 text-center">
