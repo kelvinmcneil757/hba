@@ -17,21 +17,21 @@ export default function About() {
           </div>
           <h1 className="text-5xl font-bold mb-6">About Us</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Learn about our mission, our founder, and the impact we're making in the Hillsborough community.
+            Learn about our mission, our leadership team, and the impact we're making in the Hillsborough community.
           </p>
         </div>
       </section>
 
-      {/* Founder Section */}
+      {/* Leadership Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold text-black mb-6">Meet Our Founder</h2>
+                <h2 className="text-4xl font-bold text-black mb-6">Meet Our President and Head Coach</h2>
                 <h3 className="text-2xl font-semibold text-black mb-4">Kelvin McNeil</h3>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Kelvin McNeil is the Head Coach and Founder of Hillsborough Basketball Academy. 
+                  Kelvin McNeil is the President and Head Coach of Hillsborough Basketball Academy. 
                   With years of experience in basketball coaching and youth development, Kelvin 
                   has dedicated his career to helping young athletes reach their full potential 
                   both on and off the court.
@@ -59,7 +59,7 @@ export default function About() {
                     />
                   </div>
                   <h4 className="text-xl font-semibold text-black mb-2">Kelvin McNeil</h4>
-                  <p className="text-gray-600">Head Coach & Founder</p>
+                  <p className="text-gray-600">President & Head Coach</p>
                 </div>
               </div>
             </div>
@@ -67,8 +67,65 @@ export default function About() {
         </div>
       </section>
 
-      {/* Organization History */}
+      {/* Board of Directors Section */}
       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-black text-center mb-12">Our Board of Directors</h2>
+            <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 mb-8">
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Hillsborough Basketball Academy is guided by a dedicated board of directors with deep roots in 
+                college basketball. Our board consists of <strong className="text-black">Alphonso Dawson</strong> and 
+                <strong className="text-black"> DJ Boney</strong>, both of whom played college basketball at the 
+                <strong className="text-black"> University of Delaware</strong> alongside Kelvin McNeil.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                This shared collegiate basketball experience creates a unique bond and understanding that directly 
+                benefits our program. Alphonso and DJ bring their extensive knowledge of the game, combined with 
+                their professional experience, to help shape the direction and success of HBA.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                <strong className="text-black">Alphonso Dawson and DJ Boney play vital roles in planning, coaching, 
+                and long-term strategy</strong> for the program. Their contributions extend beyond the boardroom—they 
+                are actively involved in coaching sessions, program development, and strategic decision-making 
+                that ensures HBA continues to provide exceptional opportunities for young athletes.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Together with Kelvin, this leadership team brings decades of combined basketball experience, 
+                ensuring that every decision made at HBA is informed by a deep understanding of the game, 
+                player development, and what it takes to build a successful youth basketball program.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                <div className="w-32 h-32 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white text-4xl font-bold">AD</span>
+                </div>
+                <h3 className="text-2xl font-bold text-black mb-2">Alphonso Dawson</h3>
+                <p className="text-gray-600 mb-4">Board Member</p>
+                <p className="text-gray-700">
+                  University of Delaware Basketball Alumni
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                <div className="w-32 h-32 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white text-4xl font-bold">DJ</span>
+                </div>
+                <h3 className="text-2xl font-bold text-black mb-2">DJ Boney</h3>
+                <p className="text-gray-600 mb-4">Board Member</p>
+                <p className="text-gray-700">
+                  University of Delaware Basketball Alumni
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Organization History */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-black text-center mb-12">Our Story</h2>
