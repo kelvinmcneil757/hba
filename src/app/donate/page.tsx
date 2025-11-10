@@ -2,12 +2,34 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 
 export default function Donate() {
   const [isVerified, setIsVerified] = useState(false)
   const [userAnswer, setUserAnswer] = useState('')
   const [showError, setShowError] = useState(false)
+  const [attempts, setAttempts] = useState(0)
+  const [isBlocked, setIsBlocked] = useState(false)
+  const [pageLoadTime] = useState(() => Date.now())
+  const [honeypot, setHoneypot] = useState('')
+  const [secondsRemaining, setSecondsRemaining] = useState(5)
+
+  // Countdown timer for 5-second requirement
+  useEffect(() => {
+    if (isVerified) return
+
+    const interval = setInterval(() => {
+      const timeOnPage = Date.now() - pageLoadTime
+      const remaining = Math.max(0, Math.ceil((5000 - timeOnPage) / 1000))
+      setSecondsRemaining(remaining)
+      
+      if (remaining === 0) {
+        clearInterval(interval)
+      }
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [pageLoadTime, isVerified])
 
   // Generate a simple math question
   const { question, answer } = useMemo(() => {
@@ -19,11 +41,60 @@ export default function Donate() {
     }
   }, [])
 
-  const handleVerification = () => {
-    if (userAnswer.trim() === answer) {
-      setIsVerified(true)
-      setShowError(false)
-    } else {
+  const handleVerification = async () => {
+    // Check if blocked due to too many attempts
+    if (isBlocked) {
+      setShowError(true)
+      return
+    }
+
+    // Honeypot check - if filled, it's likely a bot
+    if (honeypot !== '') {
+      setIsBlocked(true)
+      setShowError(true)
+      return
+    }
+
+    // Minimum time check - require at least 5 seconds on page before allowing verification
+    const timeOnPage = Date.now() - pageLoadTime
+    if (timeOnPage < 5000) {
+      const secondsRemaining = Math.ceil((5000 - timeOnPage) / 1000)
+      setShowError(true)
+      return
+    }
+
+    // Call server-side API for IP-based rate limiting
+    try {
+      const response = await fetch('/api/verify-donation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          answer,
+          userAnswer,
+          pageLoadTime,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setIsVerified(true)
+        setShowError(false)
+        setAttempts(0)
+        setIsBlocked(false)
+      } else {
+        setShowError(true)
+        if (data.blocked) {
+          setIsBlocked(true)
+        }
+        if (data.attemptsRemaining !== undefined) {
+          setAttempts(2 - data.attemptsRemaining)
+        }
+      }
+    } catch (error) {
+      console.error('Verification error:', error)
       setShowError(true)
     }
   }
@@ -205,6 +276,18 @@ export default function Donate() {
                 </div>
                 
                 <div className="space-y-4">
+                  {/* Honeypot field - hidden from users but bots might fill it */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+                  
                   <div>
                     <label htmlFor="verification-question" className="block text-left text-white font-semibold mb-2">
                       {question}
@@ -222,20 +305,44 @@ export default function Donate() {
                       placeholder="Enter answer"
                       aria-label="Answer to verification question"
                       autoComplete="off"
+                      disabled={isBlocked}
                     />
                     {showError && (
                       <p className="text-red-300 text-sm mt-2" role="alert">
-                        Incorrect answer. Please try again.
+                        {isBlocked 
+                          ? "Too many failed attempts. Your IP has been temporarily blocked. Please try again later."
+                          : secondsRemaining > 0
+                            ? `Please wait ${secondsRemaining} more second${secondsRemaining === 1 ? '' : 's'} before verifying.`
+                            : attempts > 0 
+                              ? `Incorrect answer. ${2 - attempts} attempt${2 - attempts === 1 ? '' : 's'} remaining.`
+                              : "Incorrect answer. Please try again."
+                        }
+                      </p>
+                    )}
+                    {attempts > 0 && attempts < 2 && (
+                      <p className="text-yellow-300 text-xs mt-1">
+                        Attempts: {attempts}/2
+                      </p>
+                    )}
+                    {secondsRemaining > 0 && !isVerified && (
+                      <p className="text-blue-300 text-xs mt-2">
+                        Please read the page for {secondsRemaining} more second{secondsRemaining === 1 ? '' : 's'} before verifying.
                       </p>
                     )}
                   </div>
                   
                   <button
                     onClick={handleVerification}
-                    className="w-full bg-white text-blue-900 px-6 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-500"
+                    disabled={isBlocked || secondsRemaining > 0}
+                    className="w-full bg-white text-blue-900 px-6 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     aria-label="Verify and proceed to donation"
                   >
-                    Verify & Continue
+                    {isBlocked 
+                      ? 'Blocked - Too Many Attempts' 
+                      : secondsRemaining > 0 
+                        ? `Please wait ${secondsRemaining}s...`
+                        : 'Verify & Continue'
+                    }
                   </button>
                 </div>
                 
