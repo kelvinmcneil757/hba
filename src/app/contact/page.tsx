@@ -50,12 +50,12 @@ export default function Contact() {
                 </div>
                 <h3 className="text-2xl font-bold text-black mb-4">Follow Us</h3>
                 <a 
-                  href="https://www.instagram.com/hillsboroughbballacademy/" 
+                  href="https://www.instagram.com/hba_2034/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-xl text-blue-600 hover:text-blue-800 transition-colors font-semibold"
                 >
-                  @hillsboroughbballacademy
+                  @hba_2034
                 </a>
                 <p className="text-gray-600 mt-2">Stay updated with our latest news</p>
               </div>

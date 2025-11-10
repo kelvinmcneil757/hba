@@ -85,7 +85,7 @@ export default function RootLayout({
                   className="opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <a 
-                  href="https://www.instagram.com/hillsboroughbballacademy/" 
+                  href="https://www.instagram.com/hba_2034/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white hover:text-gray-300 transition-colors"
