@@ -161,6 +161,8 @@ export default function About() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 1200px"
+                      priority
+                      unoptimized
                     />
                   </div>
                 </div>
@@ -174,6 +176,7 @@ export default function About() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 600px"
+                      unoptimized
                     />
                   </div>
                   <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
@@ -183,6 +186,7 @@ export default function About() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 600px"
+                      unoptimized
                     />
                   </div>
                 </div>
@@ -196,6 +200,7 @@ export default function About() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 600px"
+                      unoptimized
                     />
                   </div>
                   <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
@@ -205,6 +210,7 @@ export default function About() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 600px"
+                      unoptimized
                     />
                   </div>
                 </div>
