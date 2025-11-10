@@ -22,25 +22,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Coaching Image Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/IMG_0055.png"
-                alt="Kelvin McNeil coaching HBA players on the basketball court"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 1200px"
-                priority
-                unoptimized
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Leadership Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
