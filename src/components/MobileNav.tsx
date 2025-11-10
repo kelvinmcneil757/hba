@@ -21,11 +21,19 @@ export default function MobileNav() {
     <div className="md:hidden relative z-[80]">
       <button
         onClick={toggleMenu}
-        className="text-white p-2 focus:outline-none focus:ring-2 focus:ring-white rounded relative z-[80] touch-manipulation"
+        onTouchStart={(e) => {
+          e.stopPropagation()
+        }}
+        className="text-white p-3 -mr-2 focus:outline-none focus:ring-2 focus:ring-white rounded relative z-[80] touch-manipulation cursor-pointer active:bg-white/10"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
         type="button"
-        style={{ WebkitTapHighlightColor: 'transparent' }}
+        style={{ 
+          WebkitTapHighlightColor: 'transparent',
+          touchAction: 'manipulation',
+          minWidth: '44px',
+          minHeight: '44px'
+        }}
       >
         {isOpen ? (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
