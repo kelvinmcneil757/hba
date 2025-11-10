@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import MobileNav from '@/components/MobileNav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,15 +26,20 @@ export default function RootLayout({
         <nav className="fixed top-0 w-full bg-black bg-opacity-90 backdrop-blur-sm z-50">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center space-x-3">
+              <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
                 <Image
                   src="/images/logo.PNG"
                   alt="HBA Logo"
                   width={32}
                   height={32}
-                  className="rounded-full"
+                  className="rounded-full flex-shrink-0"
                 />
-                <span className="text-white text-xl font-bold">Hillsborough Basketball Academy</span>
+                <span className="text-white text-sm sm:text-lg md:text-xl font-bold hidden sm:inline">
+                  Hillsborough Basketball Academy
+                </span>
+                <span className="text-white text-sm font-bold sm:hidden">
+                  HBA
+                </span>
               </Link>
               <div className="hidden md:flex space-x-8">
                 <Link href="/" className="text-white hover:text-gray-300 transition-colors">
@@ -58,13 +64,7 @@ export default function RootLayout({
                   Contact
                 </Link>
               </div>
-              <div className="md:hidden">
-                <button className="text-white">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-              </div>
+              <MobileNav />
             </div>
           </div>
         </nav>
